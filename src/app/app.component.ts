@@ -1,13 +1,23 @@
+// app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true // Add this line
 })
 export class AppComponent {
-  title = 'GifApplication';
+  gifs = [
+    { title: 'GIF1', src: 'assets/gif1.gif' },
+    { title: 'GIF2', src: 'assets/gif2.gif' },
+    // Gifs
+  ];
+
+  constructor(private router: Router) {}
+
+  redirectToGif(gif: { title: string, src: string }) { // Change the parameter type to { title: string, src: string }
+    this.router.navigate(['/gif', gif.title]);
+  }
 }
