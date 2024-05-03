@@ -1,12 +1,14 @@
 // app.component.ts
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // Import Router
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true // Add this line
+  imports: [CommonModule],
+  standalone: true
 })
 export class AppComponent {
   gifs = [
