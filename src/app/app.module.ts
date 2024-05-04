@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent, // Declare AppComponent
     GifComponent,
     GifDetailComponent,
   ],
@@ -19,7 +18,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     RouterModule, // Add RouterModule to imports array
   ],
-  providers: [],
-  bootstrap: [AppComponent] // Bootstrap AppComponent
+  providers: []
 })
 export class AppModule { }
