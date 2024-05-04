@@ -11,6 +11,6 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .then(moduleRef => {
     const applicationRef = moduleRef.injector.get(ApplicationRef);
-    const componentRef = applicationRef.bootstrap(AppComponent); // Bootstrap AppComponent
+    applicationRef.bootstrap(AppComponent); // Bootstrap AppComponent without assigning to a variable
   })
   .catch(err => console.error(err));

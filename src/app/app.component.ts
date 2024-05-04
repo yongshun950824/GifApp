@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true, // Add this line
+  
 })
 export class AppComponent {
   title = 'compiled';

@@ -1,16 +1,17 @@
-// app-routing.module.ts
+// Inside your app-routing.module.ts file
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GifComponent } from '../gif/gif.component'; // Import GifComponent
-import { GifDetailComponent } from '../gif/gif-detail.component'; // Import GifDetailComponent
+import { GifComponent } from '../gif/gif.component';
+import { GifDetailComponent } from '../gif/gif-detail.component';
 
 const routes: Routes = [
-  { path: 'gif', component: GifComponent },
+  { path: 'gifs', component: GifComponent },
   { path: 'gif/:title', component: GifDetailComponent },
+  // Add more routes here
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], // Use forRoot() instead of forChild()
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

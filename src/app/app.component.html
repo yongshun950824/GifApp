@@ -1,8 +1,7 @@
-<!-- app.component.html -->
-<div *ngFor="let gif of gifs"> <!-- Start of loop over 'gifs' array -->
-  <h2>{{ gif.title }}</h2> <!-- Display the title of the gif -->
-  <img [src]="gif.src" alt="{{ gif.title }}"> <!-- Display the gif image -->
-  <a [routerLink]="['/gif', gif.title]">View GIF</a> <!-- Link to the gif detail view -->
-</div> <!-- End of loop -->
+<div *ngFor="let gif of gifs">
+  <h2 (click)="redirectToGif(gif)">{{ gif.title }}</h2>
+  <img [src]="gif.src" alt="{{ gif.title }}">
+  <a routerLink="/gifs">View Gifs</a>
 
-<router-outlet></router-outlet> <!-- Placeholder for the routed component -->
+</div>
+<router-outlet></router-outlet>
