@@ -1,23 +1,24 @@
-// app.module.ts
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { GifComponent } from '../gif/gif.component'; // Import GifComponent
-
-const routes: Routes = [
-  { path: 'gif/:title', component: GifComponent },
-];
+import { NgModule } from '@angular/core';
+import { GifComponent } from '../gif/gif.component';
+import { GifDetailComponent } from '../gif/gif-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { app } from '../../server';
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    GifComponent,
+    GifDetailComponent,
+  ],
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
   ],
-  declarations: [GifComponent], // Declare only GifComponent
-  providers: [], // Do not provide AppComponent
+  providers: [],
+  bootstrap: [AppComponent] // Bootstrap AppComponent
 })
-export class AppModule {
-  ngDoBootstrap() {}
-}
+export class AppModule { }
